@@ -1,38 +1,270 @@
-.App {
-  text-align: center;
+*{
+
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1{
+  font-size:1em;
+  margin-bottom:1em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App{
+  display:flex;
+  width:100%;
+  flex-direction:column;
+}
+.mainUI{
+  display:flex;
+  margin: 20px 50px 20px 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.coinUI{
+  display:flex;
+  width:50%;
+}
+
+.coinSelector{
+  display:flex;
+  height:80vh;
+  width:60%;
+  text-align:center;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+}
+
+.coinWrapper{
+  display:flex;
+  width:100%;
+}
+
+.coins{
+  overflow-y:auto;
+  padding-right:1em;
+  direction:ltr;
+  padding-top:1em;
+  padding-bottom:1em;
+  -webkit-box-shadow: 1px 72px 42px -27px rgba(0,0,0,0.61);
+  -moz-box-shadow: 1px 72px 42px -27px rgba(0,0,0,0.61);
+  box-shadow: 1px 72px 42px -27px rgba(0,0,0,0.61);
+  border:solid 1px black;
+}
+
+.coin{
+  
+  width: 52px; 
+  height: 52px;
+  cursor: pointer;
   display: flex;
-  flex-direction: column;
+  justify-content:center;
   align-items: center;
+  background-color:gold;
+  margin: 5px;
+  top: 6px;
+  border: 3px solid rgb(189, 163, 16);
+  border-radius: 50px;
+  box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, .1);
+}
+
+.coinContent{  font-family: georgia;
+  font-style: italic;
+  font-weight:500;
+}
+
+.returnButton{
+  margin:1em;
+  padding:1em;
+  min-width:50px;
+  
+}
+
+.modal{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+
+}
+
+.adminButton{
+  min-width:100px;
+  margin:1em;
+  padding:1em;
+  background-color:rgb(192, 161, 161);
+  height:5em;
+  
+}
+
+
+.columns{
+  height:100%;
+  width:33%;
+  border:solid 1px black;
+  background-color:white;
+  opacity:1;
+}
+
+.adminMenuWrapper{
+  
+  background-color:white;
+  display:flex;
+  height:80vh;
+  justify-content: space-evenly;
+  align-items:center;
+  margin-top:1em;
+  border:solid 5px black;
+}
+
+label{
+  display:inline-block;
+  margin-right:15px;
+  width:50%;
+  font-weight:bold;
+
+}
+
+input{
+  width:50%;
+
+}
+
+form{
+  display:flex;
+  flex-direction:column;
+  border:solid 1px black;
+  width:100%;
+  margin:1em;
+}
+
+.coinSlotUI{
+  display:flex;
+  height:80vh;
+  width:40%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  border-top:solid 1px black;
+  border-left:solid 1px black;
+  border-bottom:solid 1px black;
+  
+}
+
+button{
+  cursor:pointer;
+}
+
+.sections{
+  width:33%;
+  display:flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.coinSlot{
+
+  width: 80px; 
+  height: 80px;
+background-color:black;
+  margin: 5px;
+  top: 6px;
+  border-radius: 50px;
+  box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, .1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.amountDisplay{
+  min-height:50px;
+  min-width:100px;
+  background-color:black;
+  color:red;
+  border:solid 1px rgb(136, 20, 20);
+  display:flex;
+  font-size: 2.5em;
+  align-items:center;
+  justify-content: center;
+ 
+}
+
+.productUI{
+  display:flex;
+  width:50%;
+  height:80vh;
+  overflow:auto;
+  flex-direction:column;
+  border-top:solid 1px black;
+  border-bottom:solid 1px black;
+  border-right:solid 1px black;
+  justify-content: center;
+ 
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+.brandWrapper{
+  display:flex;
+  justify-content:space-around;
+  padding:1em;
+  margin:0.2em;
+  border:solid 1px black;
+  cursor:pointer;
+}
+
+.brandWrapper:hover{
+  background-color:rgb(221, 216, 216);
+}
+
+.brandElement{
+  width:33%;
+  display:flex;
+  justify-content:center;
+}
+
+.stockMenuWrapper{
+
+  margin:0.5em;
+}
+
+.infoDisplay{
+  display:flex;
+  font-weight:bold;
+  height:10vh;
+  min-width:100px;
+  padding:1em;
+  margin: 0px 50px;
+  text-align:center;
+  align-items:center;
+  justify-content:center;
+  -webkit-box-shadow: 1px 72px 42px -27px rgba(0,0,0,0.61);
+  -moz-box-shadow: 1px 72px 42px -27px rgba(0,0,0,0.61);
+  box-shadow: 1px 72px 42px -27px rgba(0,0,0,0.61);
+
+}
+
+.infoDisplay h1{
+
+  border:1px solid black;
+  width:60%;
+  padding:1em;
+}
+
+.inStock{
+
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+  background-color: #ABFF00;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
+}
+
+.outOfStock{
+
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+  background-color: #F00;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 12px;
+
 }
