@@ -3,9 +3,6 @@ import React from "react";
 
 export default class ProductUI extends React.Component {
 
-
-
-
     makeSelection = (brand) => {
 
         var myHeaders = new Headers();
@@ -23,22 +20,15 @@ export default class ProductUI extends React.Component {
             .catch(error => console.log(error));
     }
 
-
-
     handleSucessFullPurchase = (purchase) => {
     
-        let composedMessage = ""
+        console.log(purchase);
+        let composedMessage = purchase.message;
         if (purchase.object != null) {
-            composedMessage = `You have received a delicious ${purchase.object.name}`;
             this.props.handleStock(purchase.object,purchase.stock);
             this.props.resetCurrentValue();
         }
-        else {
-            composedMessage = purchase.message;
-        }
-        
-        this.props.getNewMessage(composedMessage);
-        
+        this.props.getNewMessage(composedMessage);       
     }
 
     render() {

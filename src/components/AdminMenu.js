@@ -10,9 +10,6 @@ export default class AdminMenu extends React.Component {
 
     }
 
-   
-
-
     render() {
 
         return (
@@ -35,9 +32,11 @@ export default class AdminMenu extends React.Component {
                                     <button disabled className="adminButton">Submit New Brand Stock</button>
                                 </form>
                             </div>
+
                             <div className="sections">
                                 <button className="adminButton" onClick={this.showAdminMenu}>Go back</button>
                             </div>
+
                             <div className="sections">
                                 <form>
 
@@ -56,8 +55,6 @@ export default class AdminMenu extends React.Component {
                         </div>
                     </div> : null}
             </div>
-
-
         )
     }
 }

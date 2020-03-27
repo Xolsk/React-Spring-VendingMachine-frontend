@@ -10,8 +10,6 @@ export default class CoinsUI extends React.Component {
         this.state = {
             coinList: []
         };
-        
-
     }
 
     componentDidMount() {
@@ -32,24 +30,23 @@ export default class CoinsUI extends React.Component {
 
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
-        
+
         var raw = JSON.stringify(coin);
-        
+
         var requestOptions = {
-          method: 'POST',
-          headers: myHeaders,
-          body: raw,
-          redirect: 'follow'
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
         };
-        
+
         fetch("http://localhost:8080/api/vendingMachines/13/insertCoin/", requestOptions)
-          .then(response => response.json())
-          .then((result=> {this.props.setCurrentValue(result.object);
-                           this.props.getNewMessage(result.message)} ))
-          .catch(error =>console.log(error));
-         
-        
-        
+            .then(response => response.json())
+            .then((result => {
+                this.props.setCurrentValue(result.object);
+                this.props.getNewMessage(result.message)
+            }))
+            .catch(error => console.log(error));
     }
 
     dragCoin = (event) => {
@@ -57,7 +54,6 @@ export default class CoinsUI extends React.Component {
         const coinStringed = event.dataTransfer.getData("drag-item");
         const coin = JSON.parse(coinStringed);
         this.addCoin(coin);
-
     }
 
     returnMoney = () => {
@@ -65,13 +61,12 @@ export default class CoinsUI extends React.Component {
         var requestOptions = {
             method: 'POST',
             redirect: 'follow'
-          };
-          
-          fetch("http://localhost:8080/api/vendingMachines/13/returnMoney", requestOptions)
+        };
+
+        fetch("http://localhost:8080/api/vendingMachines/13/returnMoney", requestOptions)
             .then(response => response.text())
-            .then((result =>{this.props.getNewMessage(result);this.props.resetCurrentValue();}))
+            .then((result => { this.props.getNewMessage(result); this.props.resetCurrentValue(); }))
             .catch(error => console.log('error', error));
-     
 
     }
 
@@ -93,9 +88,9 @@ export default class CoinsUI extends React.Component {
                                 </button>
                             </div>
                         )}
-
                     </div>
                 </div>
+                
                 <CoinSlot
                     machine={this.props.machine}
                     returnMoney={this.returnMoney}

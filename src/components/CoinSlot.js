@@ -9,7 +9,6 @@ export default class CoinsSlot extends React.Component {
 
     render() {
 
-
         return (
             <div className="coinSlotUI">
 
