@@ -32,7 +32,7 @@ export default class App extends React.Component {
   getNewMessage(message) {
 
     this.setState({ activeMessage: message });
-    setTimeout(() => { this.setState({ activeMessage: `Welcome to ${this.state.vendingMachine.model}` }) }, 3000)
+   
   }
 
   componentDidMount() {
